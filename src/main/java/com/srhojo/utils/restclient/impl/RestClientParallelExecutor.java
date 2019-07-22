@@ -2,6 +2,7 @@ package com.srhojo.utils.restclient.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -33,7 +34,7 @@ public class RestClientParallelExecutor implements RestClientExecutor {
     }
 
     /**
-     * 
+     *
      * {@inheritDoc}
      */
     @Override
@@ -42,7 +43,7 @@ public class RestClientParallelExecutor implements RestClientExecutor {
         final Stream<RestClientBuilderExecutor> restClientBuilderExecutorStream = restRequests.stream()
                 .map(this::createBuilderExecutor).collect(Collectors.toList()).stream();
         return (T) restClientBuilderExecutorStream.parallel().map(RestClientBuilderExecutor::execute)
-                .collect(Collectors.toList());
+                .filter(Objects::nonNull).collect(Collectors.toList());
     }
 
     /**

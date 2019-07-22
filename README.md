@@ -2,7 +2,7 @@
 
 	* groupId: com.srhojo.utils
 	* artifactId: restclient
-	* version: 1.0.1-SNAPSHOT
+	* version: 1.0.2-SNAPSHOT
 
 ## Technologies: <a name="Technologies">
 
@@ -32,6 +32,10 @@
 <dependency>
     <groupId>com.srhojo.utils</groupId>
     <artifactId>restclient</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
 </dependency>
 ```
+
+
+#### To Fix Jococo
+	λ mvn clean jacoco:prepare-agent install

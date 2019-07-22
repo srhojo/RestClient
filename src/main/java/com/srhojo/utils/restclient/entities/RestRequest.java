@@ -24,8 +24,6 @@ public class RestRequest {
     private final List<NameValuePair> headers;
 
     public RestRequest() {
-//        this.request = Optional.empty();
-//        this.responseType = Optional.empty();
         this.headers = new ArrayList<>();
         this.queryParams = new ArrayList<>();
     }

@@ -74,7 +74,7 @@ public class RestClientParallelExecutorIntegrationTest {
         verify(restTemplate, times(1)).exchange(any(String.class), eq(HttpMethod.DELETE), any(HttpEntity.class),
                 any(Class.class));
         assertNotNull(responseList);
-        assertEquals(3, responseList.size());
+        assertEquals(2, responseList.size());
 
     }
 

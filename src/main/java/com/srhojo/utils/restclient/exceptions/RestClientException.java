@@ -28,10 +28,6 @@ public class RestClientException extends RuntimeException {
         this.details = details;
     }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
     public HttpStatus getStatus() {
         return status;
     }

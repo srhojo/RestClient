@@ -24,10 +24,6 @@ public class NameValuePair implements Serializable {
         return new NameValuePair(name, value);
     }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
     public String getName() {
         return name;
     }
