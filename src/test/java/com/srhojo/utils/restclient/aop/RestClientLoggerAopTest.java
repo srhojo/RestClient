@@ -41,6 +41,7 @@ public class RestClientLoggerAopTest {
      */
     @Test
     public void testMarkedAsLogged() {
+        assertNotNull(restClientLoggerAop);
         restClientLoggerAop.markedAsLogged();
     }
 

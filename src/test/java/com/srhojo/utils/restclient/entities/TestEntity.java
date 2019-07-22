@@ -1,6 +1,8 @@
 package com.srhojo.utils.restclient.entities;
 
 /**
+ * Only for testing purposes
+ *
  * @author: srhojo
  * @see <a href="https://github.com/srhojo">GitHub</a>
  *
