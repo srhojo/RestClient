@@ -2,7 +2,6 @@ package com.srhojo.utils.restclient.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -11,7 +10,8 @@ import com.srhojo.utils.restclient.client.RestClient;
 import com.srhojo.utils.restclient.entities.RestRequest;
 
 /**
- * Author: srhojo URL: https://github.com/srhojo
+ * @author: srhojo
+ * @see <a href="https://github.com/srhojo">GitHub</a>
  */
 public class RestClientParallelExecutor implements RestClientExecutor {
 
@@ -32,6 +32,10 @@ public class RestClientParallelExecutor implements RestClientExecutor {
         return this;
     }
 
+    /**
+     * 
+     * {@inheritDoc}
+     */
     @Override
     @SuppressWarnings("unchecked")
     public <T> T execute() {
@@ -52,12 +56,11 @@ public class RestClientParallelExecutor implements RestClientExecutor {
                 .method(restRequest.getHttpMethod()).withQueryParams(restRequest.getQueryParams())
                 .withHeaders(restRequest.getHeaders());
 
-        final Optional<?> request = restRequest.getRequest();
-        if (request.isPresent()) {
-            executor.withRequest(request.get());
+        if (restRequest.getRequest() != null) {
+            executor.withRequest(restRequest.getRequest());
         }
-        if (restRequest.getResponseType().isPresent()) {
-            executor.withResponseType(restRequest.getResponseType().get());
+        if (restRequest.getResponseType() != null) {
+            executor.withResponseType(restRequest.getResponseType());
         }
 
         return executor;

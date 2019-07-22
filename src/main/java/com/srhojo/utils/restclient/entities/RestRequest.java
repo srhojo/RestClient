@@ -1,36 +1,36 @@
 package com.srhojo.utils.restclient.entities;
 
-import org.springframework.http.HttpMethod;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+
+import org.springframework.http.HttpMethod;
 
 /**
- * Author: srhojo
- * URL: https://github.com/srhojo
+ *
+ * @author: srhojo
+ * @see <a href="https://github.com/srhojo">GitHub</a>
+ *
  */
 public class RestRequest {
 
-    //Required parameters
+    // Required parameters
     private String url;
     private HttpMethod httpMethod;
 
-    //Optional parameters
-    private Optional<Class<?>> responseType;
-    private Optional<?> request;
+    // Optional parameters
+    private Class<?> responseType;
+    private Object request;
     private final List<NameValuePair> queryParams;
     private final List<NameValuePair> headers;
 
-
     public RestRequest() {
-        this.request = Optional.empty();
-        this.responseType = Optional.empty();
+//        this.request = Optional.empty();
+//        this.responseType = Optional.empty();
         this.headers = new ArrayList<>();
         this.queryParams = new ArrayList<>();
     }
 
-    public RestRequest(String url, HttpMethod httpMethod) {
+    public RestRequest(final String url, final HttpMethod httpMethod) {
         this();
         this.url = url;
         this.httpMethod = httpMethod;
@@ -40,7 +40,7 @@ public class RestRequest {
         return url;
     }
 
-    public void setUrl(String url) {
+    public void setUrl(final String url) {
         this.url = url;
     }
 
@@ -48,23 +48,23 @@ public class RestRequest {
         return httpMethod;
     }
 
-    public void setHttpMethod(HttpMethod httpMethod) {
+    public void setHttpMethod(final HttpMethod httpMethod) {
         this.httpMethod = httpMethod;
     }
 
-    public Optional<Class<?>> getResponseType() {
+    public Class<?> getResponseType() {
         return responseType;
     }
 
-    public void setResponseType(Optional<Class<?>> responseType) {
+    public void setResponseType(final Class<?> responseType) {
         this.responseType = responseType;
     }
 
-    public Optional<?> getRequest() {
+    public Object getRequest() {
         return request;
     }
 
-    public void setRequest(Optional<?> request) {
+    public void setRequest(final Object request) {
         this.request = request;
     }
 

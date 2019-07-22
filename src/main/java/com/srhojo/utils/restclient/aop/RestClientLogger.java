@@ -6,8 +6,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Author: srhojo
- * URL: https://github.com/srhojo
+ *
+ * @author: srhojo
+ * @see <a href="https://github.com/srhojo">GitHub</a>
+ *
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

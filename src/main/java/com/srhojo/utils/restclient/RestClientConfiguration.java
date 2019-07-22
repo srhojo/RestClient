@@ -7,7 +7,10 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * Author: srhojo URL: https://github.com/srhojo
+ *
+ * @author: srhojo
+ * @see <a href="https://github.com/srhojo">GitHub</a>
+ *
  */
 @Configuration
 @EnableAspectJAutoProxy

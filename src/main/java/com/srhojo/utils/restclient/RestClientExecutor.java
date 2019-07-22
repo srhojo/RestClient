@@ -1,8 +1,10 @@
 package com.srhojo.utils.restclient;
 
 /**
- * Author: srhojo
- * URL: https://github.com/srhojo
+ *
+ * @author: srhojo
+ * @see <a href="https://github.com/srhojo">GitHub</a>
+ *
  */
 @FunctionalInterface
 public interface RestClientExecutor {

@@ -1,10 +1,7 @@
 package com.srhojo.utils.restclient.aop;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.srhojo.utils.restclient.entities.NameValuePair;
-import com.srhojo.utils.restclient.entities.RestRequest;
-import com.srhojo.utils.restclient.exceptions.RestClientException;
+import java.util.List;
+
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -15,11 +12,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.srhojo.utils.restclient.entities.NameValuePair;
+import com.srhojo.utils.restclient.entities.RestRequest;
+import com.srhojo.utils.restclient.exceptions.RestClientException;
 
 /**
- * Author: srhojo
- * URL: https://github.com/srhojo
+ *
+ * @author: srhojo
+ * @see <a href="https://github.com/srhojo">GitHub</a>
+ *
  */
 @Aspect
 @Component
@@ -36,7 +39,6 @@ public class RestClientLoggerAop {
     public void markedAsLogged() {
         // Do nothing.
     }
-
 
     @Before("markedAsLogged()")
     public void logBefore(final JoinPoint joinPoint) {
@@ -59,21 +61,26 @@ public class RestClientLoggerAop {
         return proceed;
     }
 
-
     private void printLogRestRequest(final RestRequest restRequest) {
+
+        final String queryParamsString = listToString(restRequest.getQueryParams());
+        final String headersString = listToString(restRequest.getHeaders());
         logger.info("@@@ RC - REQUEST OBJECT @@@");
         logger.info("@@@ RC - Method: [ {} ]", restRequest.getHttpMethod());
         logger.info("@@@ RC - URI: [ {} ]", restRequest.getUrl());
-        logger.info("@@@ RC - QueryParams: [ {}]", listToString(restRequest.getQueryParams()));
-        logger.info("@@@ RC - Custom Headers: [ {}]", listToString(restRequest.getHeaders()));
-        logger.info("@@@ RC - Request: [ {} ]", restRequest.getRequest().isPresent() ? objectToString(restRequest.getRequest().get()) : "");
-        logger.info("@@@ RC - Response: [ {} ]", restRequest.getResponseType().isPresent() ? restRequest.getResponseType().get() : "Void");
+        logger.info("@@@ RC - QueryParams: [ {}]", queryParamsString);
+        logger.info("@@@ RC - Custom Headers: [ {}]", headersString);
+        logger.info("@@@ RC - Request: [ {} ]",
+                restRequest.getRequest() != null ? objectToString(restRequest.getRequest()) : "");
+        logger.info("@@@ RC - Response: [ {} ]",
+                restRequest.getResponseType() != null ? restRequest.getResponseType() : "Void");
         logger.info("@@@ RC - @@@@@@@@@@");
     }
 
-    private String listToString(List<NameValuePair> queryParams) {
-        StringBuilder sb = new StringBuilder();
-        queryParams.forEach(nameValue -> sb.append(String.format(" %s : %s", nameValue.getName(), nameValue.getValue())).append(";"));
+    private String listToString(final List<NameValuePair> queryParams) {
+        final StringBuilder sb = new StringBuilder();
+        queryParams.forEach(
+                nameValue -> sb.append(String.format(" %s : %s ;", nameValue.getName(), nameValue.getValue())));
         return sb.toString();
     }
 

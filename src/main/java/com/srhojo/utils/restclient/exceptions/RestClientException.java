@@ -1,11 +1,14 @@
 package com.srhojo.utils.restclient.exceptions;
 
-import io.swagger.annotations.ApiModelProperty;
 import org.springframework.http.HttpStatus;
 
+import io.swagger.annotations.ApiModelProperty;
+
 /**
- * Author: srhojo
- * URL: https://github.com/srhojo
+ *
+ * @author: srhojo
+ * @see <a href="https://github.com/srhojo">GitHub</a>
+ *
  */
 public class RestClientException extends RuntimeException {
     private static final long serialVersionUID = -548900993881141526L;
