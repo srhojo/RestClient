@@ -11,6 +11,16 @@ import com.srhojo.utils.restclient.client.RestClient;
 import com.srhojo.utils.restclient.entities.RestRequest;
 
 /**
+ * <pre>
+ * Builder implementation of {@link RestClientExecutor}.
+ * That's a complex implementation that execute 'N' numbers of Request using
+ * {@link Stream#parallel()} an a {@link RestClientBuilderExecutor}.
+ *
+ * {@link #execute()} returns a list of responses.
+ * </pre>
+ *
+ * ATTENTION: All response <b>MUST</b> be the same responseType or Void
+ *
  * @author: srhojo
  * @see <a href="https://github.com/srhojo">GitHub</a>
  */
@@ -19,15 +29,32 @@ public class RestClientParallelExecutor implements RestClientExecutor {
     private final RestClient restClient;
     private final List<RestRequest> restRequests;
 
+    /**
+     * Private constructor
+     *
+     * @param restClient RestClient to execute
+     */
     private RestClientParallelExecutor(final RestClient restClient) {
         this.restClient = restClient;
         this.restRequests = new ArrayList<>();
     }
 
+    /**
+     * Static point of entry to create RestClientParallelExecutor
+     *
+     * @param restClient an implementation of RestClient
+     * @return A RestClientParallelExecutor
+     */
     public static RestClientParallelExecutor of(final RestClient restClient) {
         return new RestClientParallelExecutor(restClient);
     }
 
+    /**
+     * Method to add a RestRequest to the request list
+     *
+     * @param restRequest RestRequest to add in the execution
+     * @return This RestClientParallelExecutor
+     */
     public RestClientParallelExecutor addRequest(final RestRequest restRequest) {
         this.restRequests.add(restRequest);
         return this;
@@ -47,10 +74,11 @@ public class RestClientParallelExecutor implements RestClientExecutor {
     }
 
     /**
-     * Method to constructor a builder Executor
+     * Private method to constructor a builder Executor from a RestRequest using the
+     * RestClient.
      *
      * @param restRequest request
-     * @return new executor
+     * @return A RestClientBuilderExecutor
      */
     private RestClientBuilderExecutor createBuilderExecutor(final RestRequest restRequest) {
         final RestClientBuilderExecutor executor = RestClientBuilderExecutor.of(restClient).url(restRequest.getUrl())

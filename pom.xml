@@ -6,11 +6,33 @@
 
   <groupId>com.srhojo.utils</groupId>
   <artifactId>restclient</artifactId>
-  <version>1.0.2-SNAPSHOT</version>
+  <version>1.0.2.RELEASE</version>
 
   <name>restclient</name>
   <url>https://github.com/srhojo/RestClient</url>
 
+	<licenses>
+	  <license>
+	    <name>The Apache Software License, Version 2.0</name>
+	    <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+	  </license>
+	</licenses>
+  
+  <developers>
+    <developer>
+      <name>Javier</name>
+      <email>javihojo@gmail.com</email>
+      <organization>srhojo</organization>
+      <organizationUrl>https://github.com/srhojo</organizationUrl>
+    </developer>
+  </developers>
+  
+  <scm>
+    <connection>scm:git:git://github.com/srhojo/RestClient.git</connection>
+    <developerConnection>scm:git:ssh://github.com:srhojo/RestClient.git</developerConnection>
+    <url>https://github.com/srhojo/RestClient/tree/master</url>
+  </scm>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -86,59 +108,39 @@
   </dependencies>
 
   <build>
-  	<pluginManagement>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.1.0</version>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<executions>
+				<execution>
+					<id>attach-javadocs</id>
+					<goals>
+						<goal>jar</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+		<plugin>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>${jacoco.version}</version>
 				<executions>
-             		<execution>
-						<id>copy-resources</id>
-						<phase>validate</phase>
-						<goals>
-						    <goal>copy-resources</goal>
-						</goals>
-						<configuration>
-						    <outputDirectory>
-						        ${basedir}/target/</outputDirectory>
-						    <resources>
-						        <resource>
-						            <directory>
-						                ${basedir}/src/test/resources/ </directory>
-						            <includes>
-						                <include>jacoco.exec</include>
-						            </includes>
-						        </resource>
-						    </resources>
-						</configuration>
-					</execution>
+				    <execution>
+				        <id>default-prepare-agent</id>
+				        <goals>
+				            <goal>prepare-agent</goal>
+				        </goals>
+				    </execution>
+				    <execution>
+				        <id>default-report</id>
+				        <phase>prepare-package</phase>
+				        <goals>
+				            <goal>report</goal>
+				        </goals>
+				    </execution>
 				</executions>
-				<configuration>
-				    <encoding>cp1252</encoding>
-				</configuration>
-			</plugin>								
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>${jacoco.version}</version>
-					<executions>
-					    <execution>
-					        <id>default-prepare-agent</id>
-					        <goals>
-					            <goal>prepare-agent</goal>
-					        </goals>
-					    </execution>
-					    <execution>
-					        <id>default-report</id>
-					        <phase>prepare-package</phase>
-					        <goals>
-					            <goal>report</goal>
-					        </goals>
-					    </execution>
-					</executions>
-			</plugin>
-		</plugins>
-	</pluginManagement>
+		</plugin>
+	</plugins>
   </build>
 </project>
