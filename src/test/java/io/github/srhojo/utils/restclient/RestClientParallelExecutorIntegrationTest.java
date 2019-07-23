@@ -1,4 +1,4 @@
-package com.srhojo.utils.restclient;
+package io.github.srhojo.utils.restclient;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -22,10 +22,12 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
+import com.srhojo.utils.restclient.RestClientConfiguration;
 import com.srhojo.utils.restclient.client.RestClient;
 import com.srhojo.utils.restclient.entities.RestRequest;
-import com.srhojo.utils.restclient.entities.TestEntity;
 import com.srhojo.utils.restclient.impl.RestClientParallelExecutor;
+
+import io.github.srhojo.utils.restclient.entities.TestEntity;
 
 /**
  * @author: srhojo

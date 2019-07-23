@@ -1,4 +1,4 @@
-package com.srhojo.utils.restclient.impl;
+package io.github.srhojo.utils.restclient.impl;
 
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
@@ -18,7 +18,9 @@ import org.springframework.http.HttpMethod;
 import com.srhojo.utils.restclient.client.RestClient;
 import com.srhojo.utils.restclient.entities.NameValuePair;
 import com.srhojo.utils.restclient.entities.RestRequest;
-import com.srhojo.utils.restclient.entities.TestEntity;
+import com.srhojo.utils.restclient.impl.RestClientBuilderExecutor;
+
+import io.github.srhojo.utils.restclient.entities.TestEntity;
 
 /**
  * @author: srhojo

@@ -1,6 +1,6 @@
 # RestClient - RestTemplate utility
 
-	* groupId: com.srhojo.utils
+	* groupId: io.github.srhojo.utils
 	* artifactId: restclient
 	* version: 1.0.2.RELEASE
 
@@ -30,7 +30,7 @@
 * #### Maven <a name="maven">
 ```java
 <dependency>
-    <groupId>com.srhojo.utils</groupId>
+    <groupId>io.github.srhojo.utils</groupId>
     <artifactId>restclient</artifactId>
     <version>1.0.2.RELEASE</version>
 </dependency>

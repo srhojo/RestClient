@@ -1,4 +1,4 @@
-package com.srhojo.utils.restclient.entities;
+package io.github.srhojo.utils.restclient.entities;
 
 /**
  * Only for testing purposes
