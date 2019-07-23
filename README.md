@@ -16,7 +16,7 @@
 | Javax Validation | 2.0.1   | https://docs.oracle.com/javaee/7/api/javax/validation/package-summary.html |
 | Jackson databind | 2.9.9.1 | https://github.com/FasterXML/jackson |
 | Swagger2         | 2.9.2   |  |	
-| Junit            | 4.11    |  |	
+| spring-boot-starter-test            | 2.1.6    | https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html  |	
 | Mockito-core     | 2.28.2  | https://site.mockito.org/ |	
 
 
@@ -37,5 +37,5 @@
 ```
 
 
-#### To Fix Jococo
+#### To Fix Jacoco
 	λ mvn clean jacoco:prepare-agent install
