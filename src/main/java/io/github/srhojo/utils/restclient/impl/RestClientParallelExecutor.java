@@ -1,4 +1,4 @@
-package com.srhojo.utils.restclient.impl;
+package io.github.srhojo.utils.restclient.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,9 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import com.srhojo.utils.restclient.RestClientExecutor;
-import com.srhojo.utils.restclient.client.RestClient;
-import com.srhojo.utils.restclient.entities.RestRequest;
+import io.github.srhojo.utils.restclient.RestClientExecutor;
+import io.github.srhojo.utils.restclient.client.RestClient;
+import io.github.srhojo.utils.restclient.entities.RestRequest;
 
 /**
  * <pre>

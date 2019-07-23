@@ -1,4 +1,4 @@
-package com.srhojo.utils.restclient.aop;
+package io.github.srhojo.utils.restclient.aop;
 
 import java.util.List;
 
@@ -14,9 +14,10 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.srhojo.utils.restclient.entities.NameValuePair;
-import com.srhojo.utils.restclient.entities.RestRequest;
-import com.srhojo.utils.restclient.exceptions.RestClientException;
+
+import io.github.srhojo.utils.restclient.entities.NameValuePair;
+import io.github.srhojo.utils.restclient.entities.RestRequest;
+import io.github.srhojo.utils.restclient.exceptions.RestClientException;
 
 /**
  *
@@ -35,7 +36,7 @@ public class RestClientLoggerAop {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @SuppressWarnings("EmptyMethod")
-    @Pointcut("within(@com.srhojo.utils.restclient.aop.RestClientLogger *)")
+    @Pointcut("within(@io.github.srhojo.utils.restclient.aop.RestClientLogger *)")
     public void markedAsLogged() {
         // Do nothing.
     }

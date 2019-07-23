@@ -14,11 +14,10 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.HttpMethod;
 
-import com.srhojo.utils.restclient.client.RestClient;
-import com.srhojo.utils.restclient.entities.RestRequest;
-import com.srhojo.utils.restclient.impl.RestClientParallelExecutor;
-
+import io.github.srhojo.utils.restclient.client.RestClient;
+import io.github.srhojo.utils.restclient.entities.RestRequest;
 import io.github.srhojo.utils.restclient.entities.TestEntity;
+import io.github.srhojo.utils.restclient.impl.RestClientParallelExecutor;
 
 /**
  * @author: srhojo
@@ -33,7 +32,7 @@ public class RestClientParallelExecutorTest {
 
     /**
      * Test method for
-     * {@link com.srhojo.utils.restclient.impl.RestClientParallelExecutor#execute()}.
+     * {@link io.github.srhojo.utils.restclient.impl.RestClientParallelExecutor#execute()}.
      */
     @Test
     public void execute() {

@@ -1,4 +1,4 @@
-package com.srhojo.utils.restclient.aop;
+package io.github.srhojo.utils.restclient.aop;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

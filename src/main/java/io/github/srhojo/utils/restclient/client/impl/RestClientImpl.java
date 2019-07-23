@@ -1,4 +1,4 @@
-package com.srhojo.utils.restclient.client.impl;
+package io.github.srhojo.utils.restclient.client.impl;
 
 import java.util.Collections;
 import java.util.List;
@@ -12,11 +12,11 @@ import org.springframework.web.client.RestClientResponseException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.srhojo.utils.restclient.aop.RestClientLogger;
-import com.srhojo.utils.restclient.client.RestClient;
-import com.srhojo.utils.restclient.entities.NameValuePair;
-import com.srhojo.utils.restclient.entities.RestRequest;
-import com.srhojo.utils.restclient.exceptions.RestClientException;
+import io.github.srhojo.utils.restclient.aop.RestClientLogger;
+import io.github.srhojo.utils.restclient.client.RestClient;
+import io.github.srhojo.utils.restclient.entities.NameValuePair;
+import io.github.srhojo.utils.restclient.entities.RestRequest;
+import io.github.srhojo.utils.restclient.exceptions.RestClientException;
 
 /**
  *

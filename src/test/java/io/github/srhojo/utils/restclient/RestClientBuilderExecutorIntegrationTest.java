@@ -26,12 +26,11 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
-import com.srhojo.utils.restclient.RestClientConfiguration;
-import com.srhojo.utils.restclient.client.RestClient;
-import com.srhojo.utils.restclient.entities.NameValuePair;
-import com.srhojo.utils.restclient.impl.RestClientBuilderExecutor;
-
+import io.github.srhojo.utils.restclient.RestClientConfiguration;
+import io.github.srhojo.utils.restclient.client.RestClient;
+import io.github.srhojo.utils.restclient.entities.NameValuePair;
 import io.github.srhojo.utils.restclient.entities.TestEntity;
+import io.github.srhojo.utils.restclient.impl.RestClientBuilderExecutor;
 
 /**
  * @author: srhojo

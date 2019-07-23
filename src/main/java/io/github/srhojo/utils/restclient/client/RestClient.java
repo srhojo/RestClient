@@ -1,6 +1,6 @@
-package com.srhojo.utils.restclient.client;
+package io.github.srhojo.utils.restclient.client;
 
-import com.srhojo.utils.restclient.entities.RestRequest;
+import io.github.srhojo.utils.restclient.entities.RestRequest;
 
 /**
  * Author: srhojo

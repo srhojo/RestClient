@@ -15,12 +15,11 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.HttpMethod;
 
-import com.srhojo.utils.restclient.client.RestClient;
-import com.srhojo.utils.restclient.entities.NameValuePair;
-import com.srhojo.utils.restclient.entities.RestRequest;
-import com.srhojo.utils.restclient.impl.RestClientBuilderExecutor;
-
+import io.github.srhojo.utils.restclient.client.RestClient;
+import io.github.srhojo.utils.restclient.entities.NameValuePair;
+import io.github.srhojo.utils.restclient.entities.RestRequest;
 import io.github.srhojo.utils.restclient.entities.TestEntity;
+import io.github.srhojo.utils.restclient.impl.RestClientBuilderExecutor;
 
 /**
  * @author: srhojo
@@ -35,7 +34,7 @@ public class RestClientBuilderExecutorTest {
 
     /**
      * Test method for
-     * {@link com.srhojo.utils.restclient.impl.RestClientBuilderExecutor#execute()}.
+     * {@link io.github.srhojo.utils.restclient.impl.RestClientBuilderExecutor#execute()}.
      */
     @Test
     public void execute() {

@@ -1,6 +1,6 @@
-package com.srhojo.utils.restclient;
+package io.github.srhojo.utils.restclient;
 
-import com.srhojo.utils.restclient.client.RestClient;
+import io.github.srhojo.utils.restclient.client.RestClient;
 
 /**
  * Base interface to build a builder that execute HTTP requests through

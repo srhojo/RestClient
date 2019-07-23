@@ -1,4 +1,4 @@
-package com.srhojo.utils.restclient;
+package io.github.srhojo.utils.restclient;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
  */
 @Configuration
 @EnableAspectJAutoProxy
-@ComponentScan(value = "com.srhojo.utils.restclient.*")
+@ComponentScan(value = "io.github.srhojo.utils.restclient.*")
 public class RestClientConfiguration {
 
     @Bean

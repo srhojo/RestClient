@@ -19,12 +19,11 @@ import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 
-import com.srhojo.utils.restclient.aop.RestClientLoggerAop;
-import com.srhojo.utils.restclient.entities.NameValuePair;
-import com.srhojo.utils.restclient.entities.RestRequest;
-import com.srhojo.utils.restclient.exceptions.RestClientException;
-
+import io.github.srhojo.utils.restclient.aop.RestClientLoggerAop;
+import io.github.srhojo.utils.restclient.entities.NameValuePair;
+import io.github.srhojo.utils.restclient.entities.RestRequest;
 import io.github.srhojo.utils.restclient.entities.TestEntity;
+import io.github.srhojo.utils.restclient.exceptions.RestClientException;
 
 /**
  * @author: srhojo
@@ -39,7 +38,7 @@ public class RestClientLoggerAopTest {
 
     /**
      * Test method for
-     * {@link com.srhojo.utils.restclient.aop.RestClientLoggerAop#markedAsLogged()}.
+     * {@link io.github.srhojo.utils.restclient.aop.RestClientLoggerAop#markedAsLogged()}.
      */
     @Test
     public void testMarkedAsLogged() {
@@ -49,7 +48,7 @@ public class RestClientLoggerAopTest {
 
     /**
      * Test method for
-     * {@link com.srhojo.utils.restclient.aop.RestClientLoggerAop#logBefore(org.aspectj.lang.JoinPoint)}.
+     * {@link io.github.srhojo.utils.restclient.aop.RestClientLoggerAop#logBefore(org.aspectj.lang.JoinPoint)}.
      */
     @Test
     public void testLogBefore() {
@@ -67,7 +66,7 @@ public class RestClientLoggerAopTest {
 
     /**
      * Test method for
-     * {@link com.srhojo.utils.restclient.aop.RestClientLoggerAop#executionAround(org.aspectj.lang.ProceedingJoinPoint)}.
+     * {@link io.github.srhojo.utils.restclient.aop.RestClientLoggerAop#executionAround(org.aspectj.lang.ProceedingJoinPoint)}.
      *
      * @throws Throwable
      */

@@ -1,4 +1,4 @@
-package com.srhojo.utils.restclient.exceptions;
+package io.github.srhojo.utils.restclient.exceptions;
 
 import org.springframework.http.HttpStatus;
 

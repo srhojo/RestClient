@@ -1,4 +1,4 @@
-package com.srhojo.utils.restclient.impl;
+package io.github.srhojo.utils.restclient.impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,10 +7,10 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.http.HttpMethod;
 
-import com.srhojo.utils.restclient.RestClientExecutor;
-import com.srhojo.utils.restclient.client.RestClient;
-import com.srhojo.utils.restclient.entities.NameValuePair;
-import com.srhojo.utils.restclient.entities.RestRequest;
+import io.github.srhojo.utils.restclient.RestClientExecutor;
+import io.github.srhojo.utils.restclient.client.RestClient;
+import io.github.srhojo.utils.restclient.entities.NameValuePair;
+import io.github.srhojo.utils.restclient.entities.RestRequest;
 
 /**
  * Builder implementation of {@link RestClientExecutor}. That's a base
