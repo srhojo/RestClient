@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import javax.validation.constraints.NotNull;
 
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 
 import io.github.srhojo.utils.restclient.RestClientExecutor;
@@ -81,6 +82,13 @@ public class RestClientBuilderExecutor implements RestClientExecutor {
      */
     public RestClientBuilderExecutor withResponseType(@NotNull final Class<?> responseType) {
         restRequest.setResponseType(responseType);
+        restRequest.setParameterizedTypeReference(null);
+        return this;
+    }
+
+    public RestClientBuilderExecutor withResponseType(@NotNull final ParameterizedTypeReference<?> responseType) {
+        restRequest.setResponseType(null);
+        restRequest.setParameterizedTypeReference(responseType);
         return this;
     }
 

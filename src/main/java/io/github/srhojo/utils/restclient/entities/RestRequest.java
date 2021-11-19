@@ -3,6 +3,7 @@ package io.github.srhojo.utils.restclient.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 
 /**
@@ -19,6 +20,7 @@ public class RestRequest {
 
     // Optional parameters
     private Class<?> responseType;
+    private ParameterizedTypeReference<?> parameterizedTypeReference;
     private Object request;
     private final List<NameValuePair> queryParams;
     private final List<NameValuePair> headers;
@@ -56,6 +58,14 @@ public class RestRequest {
 
     public void setResponseType(final Class<?> responseType) {
         this.responseType = responseType;
+    }
+
+    public ParameterizedTypeReference<?> getParameterizedTypeReference() {
+        return parameterizedTypeReference;
+    }
+
+    public void setParameterizedTypeReference(ParameterizedTypeReference<?> parameterizedTypeReference) {
+        this.parameterizedTypeReference = parameterizedTypeReference;
     }
 
     public Object getRequest() {

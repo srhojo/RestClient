@@ -57,11 +57,18 @@ public class RestClientImpl implements RestClient {
             restRequest.getQueryParams()
                     .forEach(nameValue -> uriBuilder.queryParam(nameValue.getName(), nameValue.getValue()));
 
-            final Class<?> responseClass = restRequest.getResponseType() != null ? restRequest.getResponseType()
-                    : Void.class;
+            //Si es lista
+            if(restRequest.getParameterizedTypeReference()!=null) {
+                return (T) restTemplate
+                        .exchange(uriBuilder.toUriString(), restRequest.getHttpMethod(), entity, restRequest.getParameterizedTypeReference())
+                        .getBody();
+            } else {
+                final Class<?> responseClass = restRequest.getResponseType() != null ? restRequest.getResponseType()
+                        : Void.class;
 
-            return (T) restTemplate
-                    .exchange(uriBuilder.toUriString(), restRequest.getHttpMethod(), entity, responseClass).getBody();
+                return (T) restTemplate
+                        .exchange(uriBuilder.toUriString(), restRequest.getHttpMethod(), entity, responseClass).getBody();
+            }
         } catch (final RestClientResponseException re) {
             throw new RestClientException(HttpStatus.valueOf(re.getRawStatusCode()), CONST_HANDLED_EXCEPTION, re);
         } catch (final Exception e) {
